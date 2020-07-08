@@ -399,8 +399,7 @@ x *y
 x / y
 ##true matrix multiplication
 x %*% y
-
-
+x + y
 
 
 
