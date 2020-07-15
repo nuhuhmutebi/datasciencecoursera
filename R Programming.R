@@ -401,7 +401,7 @@ x / y
 x %*% y
 x + y
 
-
+ 
 
 
 
@@ -429,4 +429,81 @@ x <- c(17, 14, 4, 5, 13, 12, 10)
 x[x>10]<-4
 x
 
+#11
 # Using the dataset at "https://d396qusza40orc.cloudfront.net/rprog/data/quiz1_data.zip"
+hw1_data <- read_csv("hw1_data.csv")
+hw1_data
+# rm(data)
+colnames(hw1_data)
+print(hw1_data)
+print("Extract first two rows:")
+x =  hw1_data[1:2,] #This code extracts the first two rowns of the dataset
+x
+x =  hw1_data[1:3,] # extracts the first three rowns of the dataset
+x
+
+# Counting the number of observations in R
+n_row <- nrow(hw1_data) # creates an object that counts the number of observations
+n_row # pringing the object to count the observations
+nrow(hw1_data) # counts the number of observations without creating any object
+
+# extracting the last two rows of a dataframe
+hw1_data[152:153,] # exctracts that now we know the number of observations
+
+# value of ozone in the 47th row
+hw1_data[47, 1] # value of ozone in 47th row
+
+#counting the number of missing observations in dataframe
+sum(complete.cases(hw1_data$Ozone)) # calculates the number of complete observations
+sum(!complete.cases(hw1_data$Ozone)) # returns the missing observations
+
+#calculating the mean of ozone without including the missing observations
+mean(hw1_data$Ozone, na.rm = TRUE) # calculates the mean
+
+# Extract the subset of rows of the data frame where Ozone values are above 31 and 
+#Temp values are above 90. What is the mean of Solar.R in this subset?
+x <- subset(hw1_data, Ozone > 31&Temp > 90)
+mean(x$Solar.R, na.rm = TRUE)
+
+# mean of "Temp" when "Month" is equal to 6?
+hw1data <- subset(hw1_data, Month==6)
+nrow(hw1data)   # displays the number of observation
+mean(hw1data$Temp) # this is the actual mean
+
+# maximum ozone value in the month of May (i.e. Month is equal to 5)?
+x <- subset(hw1_data, Month==5)
+max(x$Ozone, na.rm = TRUE)
+
+nrow(hw1_data)
+
+#####EXPORTING FROM EPIDATA
+#library(epxToR)
+#z <- read.epx("SUB-STUDY  I- FortPortal.epx", use.epidata.labels=TRUE)
+#DF <- as.data.frame(z)
+
+
+
+
+
+
+
+
+#############   **WEEK 2**    #############
+##  1*CONTROL STRUCTURES IN R*
+#Allows control flow of R program. Common structures are;
+    # if, else: testing condition
+    # for: execute a loop a fixed number of times
+    # while: execute a loop while a condition is true
+    # repeat: execute an infinite loop
+    # next: skip an iteration of a loop
+    # return: exit a function
+
+#**** IF-ELSE*******
+#*
+#*
+#*
+#*
+#*
+#*
+#*
+
